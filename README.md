@@ -1,121 +1,155 @@
-<project>
-  <header>
-    <title>🎧 Spotilytics – Spotify Data Analytics Dashboard</title>
-    <badges>
-      <badge>![Python](https://img.shields.io/badge/Python-3.9-blue)</badge>
-      <badge>![Flask](https://img.shields.io/badge/Flask-Framework-green)</badge>
-      <badge>![MySQL](https://img.shields.io/badge/MySQL-Database-orange)</badge>
-      <badge>![SpotifyAPI](https://img.shields.io/badge/Spotify-API-brightgreen)</badge>
-      <badge>![Render](https://img.shields.io/badge/Deployed%20on-Render-purple)</badge>
-    </badges>
-  </header>
+# 🎧 Spotilytics – Spotify Data Analytics Dashboard  
 
-  <section id="overview">
-    <title>📊 Overview</title>
-    <p>
-      Spotilytics is an interactive <strong>Spotify Data Analytics Dashboard</strong> built using 
-      Flask, MySQL, and the Spotify API. It allows users to fetch track data such as
-      <em>Track Name, Artist, Album, Popularity, Duration</em>, and <em>Album Cover</em>.
-      The data is stored securely in a MySQL database and visualized through a dashboard 
-      for trend analysis and insights.
-    </p>
-  </section>
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)
+![Flask](https://img.shields.io/badge/Flask-Web%20Framework-lightgrey?logo=flask)
+![MySQL](https://img.shields.io/badge/MySQL-Database-orange?logo=mysql)
+![Spotify API](https://img.shields.io/badge/Spotify-API-green?logo=spotify)
+![Render](https://img.shields.io/badge/Deployed%20on-Render-blueviolet?logo=render)
 
-  <section id="features">
-    <title>✨ Features</title>
-    <list>
-      <item>🎵 Fetch real-time Spotify track data via Spotify API</item>
-      <item>💾 Store all data securely in a MySQL database</item>
-      <item>📈 Analyze track popularity and artist trends</item>
-      <item>🖼️ Save album covers and track metadata</item>
-      <item>☁️ Hosted on Render with auto-deployment</item>
-    </list>
-  </section>
+---
 
-  <section id="tech-stack">
-    <title>🧩 Tech Stack</title>
-    <list>
-      <item><strong>Backend:</strong> Flask (Python)</item>
-      <item><strong>Database:</strong> MySQL</item>
-      <item><strong>API:</strong> Spotify Web API via Spotipy</item>
-      <item><strong>Frontend:</strong> HTML, CSS, js</item>
-      <item><strong>Deployment:</strong> Render Cloud</item>
-    </list>
-  </section>
+## 🌐 Live Demo  
+🚀 **View Live:** [Spotify Track Analysis Dashboard](https://spotify-track-analysis-1.onrender.com/)  
 
-  <section id="installation">
-    <title>⚙️ Installation</title>
-    <steps>
-      <step>1️⃣ Clone the repository:
-        <code>git clone https://github.com/Vaishnavirajulu21/spotify_track_Analysis.git</code>
-      </step>
-      <step>2️⃣ Create and activate virtual environment:
-        <code>python -m venv env && env\Scripts\activate</code>
-      </step>
-      <step>3️⃣ Install dependencies:
-        <code>pip install -r requirements.txt</code>
-      </step>
-      <step>4️⃣ Create a <strong>.env</strong> file and add:
-        <code>
-          SPOTIFY_CLIENT_ID=your_client_id<br/>
-          SPOTIFY_CLIENT_SECRET=your_client_secret<br/>
-          MYSQL_HOST=localhost<br/>
-          MYSQL_USER=root<br/>
-          MYSQL_PASSWORD=your_password<br/>
-          MYSQL_DB=spotify_db
-        </code>
-      </step>
-      <step>5️⃣ Run the Flask app:
-        <code>python app.py</code>
-      </step>
-    </steps>
-  </section>
+> Analyze, visualize, and explore your favorite Spotify tracks in real time!
 
-  <section id="database">
-    <title>🗄️ Database Schema</title>
-    <table>
-      <tr><th>Column</th><th>Type</th><th>Description</th></tr>
-      <tr><td>id</td><td>INT</td><td>Primary key (auto-increment)</td></tr>
-      <tr><td>track_name</td><td>VARCHAR(255)</td><td>Track title</td></tr>
-      <tr><td>artist</td><td>VARCHAR(255)</td><td>Artist name</td></tr>
-      <tr><td>album</td><td>VARCHAR(255)</td><td>Album name</td></tr>
-      <tr><td>popularity</td><td>INT</td><td>Popularity score</td></tr>
-      <tr><td>duration_minutes</td><td>FLOAT</td><td>Track length in minutes</td></tr>
-      <tr><td>album_cover</td><td>VARCHAR(255)</td><td>Album image URL</td></tr>
-      <tr><td>url</td><td>VARCHAR(255)</td><td>Spotify track URL</td></tr>
-    </table>
-  </section>
+---
 
-  <section id="deployment">
-    <title>🚀 Deployment</title>
-    <p>
-      This project is deployed on <strong>Render</strong>.<br/>
-      To deploy your own version:
-    </p>
-    <steps>
-      <step>1️⃣ Connect your GitHub repository to Render.</step>
-      <step>2️⃣ Add environment variables from your local <code>.env</code> file in Render’s dashboard.</step>
-      <step>3️⃣ Add <code>gunicorn</code> to <code>requirements.txt</code>.</step>
-      <step>4️⃣ Set the start command as:
-        <code>gunicorn app:app</code>
-      </step>
-    </steps>
-  </section>
+## 🧠 Overview  
+**Spotilytics** is an interactive **Spotify Data Analysis Dashboard** built using **Flask**, **MySQL**, and **Chart.js**.  
+It connects with the **Spotify API** to fetch live track data, store it in a MySQL database, and visualize it through a modern, interactive dashboard.
 
-  <section id="preview">
-    <title>🌐 Live Preview</title>
-    <p>
-      🔗 <a href="https://your-render-app-url.onrender.com">Live Dashboard on Render</a>
-    </p>
-  </section>
+🎯 **Core Functions:**
+- Fetch Spotify track data (name, artist, album, popularity, duration)
+- Store details securely in **MySQL**
+- Track user searches using **SQLite**
+- Visualize trends and insights with **Chart.js**
 
-  <section id="conclusion">
-    <title>💬 Conclusion</title>
-    <p>
-      Spotilytics simplifies the process of gathering, storing, and analyzing Spotify data.
-      With the power of Flask, MySQL, and Render, it provides a seamless platform for
-      understanding track trends and musical insights 🎶.
-    </p>
-  </section>
-</project>
+---
 
+## ⚙️ Tech Stack  
+
+| Component | Technology |
+|------------|-------------|
+| **Frontend** | HTML, CSS, Bootstrap, Chart.js |
+| **Backend** | Flask (Python) |
+| **Database** | MySQL + SQLite |
+| **API** | Spotify Web API |
+| **Deployment** | Render |
+
+---
+
+## 🚀 Features  
+
+- 🎵 **Spotify Integration** – Fetch real-time data using Spotify’s Web API  
+- 💾 **MySQL Storage** – Store song metadata (artist, album, duration, popularity)  
+- 📊 **Interactive Dashboard** – Visualize your data dynamically using Chart.js  
+- 🕒 **Track History** – Maintain a search history of queried tracks  
+- 🌐 **Deployed Live** – Hosted on Render for global access  
+
+---
+
+## 🛠️ Setup Instructions  
+
+### 1️⃣ Clone the Repository  
+```bash
+git clone https://github.com/Vaishnavirajulu21/spotify_track_Analysis.git
+cd spotify_track_Analysis
+```
+
+### 2️⃣ Create and Activate Virtual Environment  
+```bash
+python -m venv env
+env\Scripts\activate   # (Windows)
+```
+
+### 3️⃣ Install Required Packages  
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Set Up Environment Variables  
+Create a `.env` file in the root directory:
+```
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+MYSQL_HOST=localhost
+MYSQL_USER=root
+MYSQL_PASSWORD=your_mysql_password
+MYSQL_DB=spotify_db
+```
+
+### 5️⃣ Run the Application  
+```bash
+python app.py
+```
+
+Then open the browser and visit 👉 [http://127.0.0.1:5000](http://127.0.0.1:5000)
+
+---
+
+## 📊 Dashboard Preview  
+
+Your dashboard includes powerful visualizations such as:
+- 🎶 Top Tracks by Popularity  
+- 📈 Average Duration per Artist  
+- 🎤 Most Searched Artists  
+
+🔗 **Live App:** [https://spotify-track-analysis-1.onrender.com/](https://spotify-track-analysis-1.onrender.com/)
+
+---
+
+## 🌍 Deployment on Render  
+
+1. Add **gunicorn** to your `requirements.txt`  
+2. Set **Start Command** in Render:
+   ```
+   gunicorn app:app
+   ```
+3. Add Environment Variables in Render Dashboard:
+   ```
+   SPOTIFY_CLIENT_ID=your_spotify_client_id
+   SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+   MYSQL_HOST=your_host
+   MYSQL_USER=your_user
+   MYSQL_PASSWORD=your_password
+   MYSQL_DB=spotify_db
+   ```
+4. Deploy and enjoy your live Spotify analytics dashboard 🎉  
+
+---
+
+## 🧰 Dependencies  
+
+- Flask  
+- spotipy  
+- mysql-connector-python  
+- pandas  
+- python-dotenv  
+- gunicorn  
+ 
+
+---
+
+## ⚡ System Flow  
+
+```
+[Spotify API] → Fetch Track Data
+        ↓
+ [Flask Backend] → Process and Transform Data
+        ↓
+ [MySQL Database] → Store Track Details
+        ↓
+ [Frontend] → Visualize Insights
+```
+
+---
+
+## 👩‍💻 Author  
+
+**Vaishnavi Rajulu**  
+🎓 Biomedical Engineer | 💻 Data Analyst | 🤖 Python Developer
+
+🌱 Passionate about Data Analytics, Machine Learning, and Intelligent Applications.
+
+🌐 GitHub
