@@ -1,1 +1,6 @@
+Flask
 gunicorn
+spotipy
+mysql-connector-python
+pandas
+python-dotenv
