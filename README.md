@@ -147,7 +147,7 @@ Your dashboard includes powerful visualizations such as:
 
 ## 👩‍💻 Author  
 
-**Vaishnavi Rajulu**  
+**💻Vaishnavi Varatharajulu**  
 🎓 Biomedical Engineer | 💻 Data Analyst | 🤖 Python Developer
 
 🌱 Passionate about Data Analytics, Machine Learning, and Intelligent Applications.
