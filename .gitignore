@@ -1,4 +1,15 @@
-echo "env/" > .gitignore
-echo "__pycache__/" >> .gitignore
-echo "*.pyc" >> .gitignore
-echo ".vscode/" >> .gitignore
+# Ignore environment files and credentials
+.env
+*.pyc
+__pycache__/
+.vscode/
+*.sqlite3
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore virtual environment
+venv/
+env/
+
