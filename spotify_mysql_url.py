@@ -52,8 +52,8 @@ for track_url in track_urls:
         all_track.append(track_data)
 
         insert_query = """
-        INSERT INTO spotify_tracks (track_name, artist, album, popularity, duration_minutes, album_cover, url)
-        VALUES (%s, %s, %s, %s, %s, %s, %s)
+        INSERT INTO spotify_tracks (track_name, artist, album, popularity, duration_minutes,url,album_cover)
+        VALUES (%s, %s, %s, %s, %s, %s,%s)
         """
         cursor.execute(insert_query, (
             track_data['Track Name'],
@@ -61,8 +61,9 @@ for track_url in track_urls:
             track_data['Album'],
             track_data['Popularity'],
             track_data['Duration (minutes)'],
-            track_data['Album Cover'],
-            track_data['URL']
+            track_data['URL'],
+            track_data['Album Cover']
+            
         ))
         connection.commit()
 
@@ -72,11 +73,8 @@ for track_url in track_urls:
         print(f"Error processing URL: {track_url}, Error: {e}")
 
 df = pd.DataFrame(all_track)
-df.to_csv("track1.csv", index=False)
+df.to_csv("track5.csv", index=False)
 print("✅ Data saved to 'track1.csv'")
-
-
-
 
 
 # Close the connection
