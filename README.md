@@ -16,14 +16,14 @@
 ---
 
 ## 🧠 Overview  
-**Spotilytics** is an interactive **Spotify Data Analysis Dashboard** built using **Flask**, **MySQL**, and **Chart.js**.  
+**Spotilytics** is an interactive **Spotify Data Analysis Dashboard** built using **Flask**, **MySQL**, and **Frontend**.  
 It connects with the **Spotify API** to fetch live track data, store it in a MySQL database, and visualize it through a modern, interactive dashboard.
 
 🎯 **Core Functions:**
 - Fetch Spotify track data (name, artist, album, popularity, duration)
 - Store details securely in **MySQL**
 - Track user searches using **SQLite**
-- Visualize trends and insights with **Chart.js**
+- Visualize trends and insights with **Html,css and javascript**
 
 ---
 
@@ -31,7 +31,7 @@ It connects with the **Spotify API** to fetch live track data, store it in a MyS
 
 | Component | Technology |
 |------------|-------------|
-| **Frontend** | HTML, CSS, Bootstrap, Chart.js |
+| **Frontend** | HTML, CSS, js |
 | **Backend** | Flask (Python) |
 | **Database** | MySQL + SQLite |
 | **API** | Spotify Web API |
@@ -43,7 +43,6 @@ It connects with the **Spotify API** to fetch live track data, store it in a MyS
 
 - 🎵 **Spotify Integration** – Fetch real-time data using Spotify’s Web API  
 - 💾 **MySQL Storage** – Store song metadata (artist, album, duration, popularity)  
-- 📊 **Interactive Dashboard** – Visualize your data dynamically using Chart.js  
 - 🕒 **Track History** – Maintain a search history of queried tracks  
 - 🌐 **Deployed Live** – Hosted on Render for global access  
 
@@ -148,8 +147,6 @@ Your dashboard includes powerful visualizations such as:
 ## 👩‍💻 Author  
 
 **💻Vaishnavi Varatharajulu**  
-🎓 Biomedical Engineer | 💻 Data Analyst | 🤖 Python Developer
 
 🌱 Passionate about Data Analytics, Machine Learning, and Intelligent Applications.
 
-🌐 GitHub
