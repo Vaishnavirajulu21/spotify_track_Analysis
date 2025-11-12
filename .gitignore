@@ -1,0 +1,15 @@
+# Ignore environment files and credentials
+.env
+*.pyc
+__pycache__/
+.vscode/
+*.sqlite3
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore virtual environment
+venv/
+env/
+

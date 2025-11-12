@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Spotify Search History</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h2 {
+            color: #1DB954;
+            margin-top: 30px;
+        }
+
+        table {
+            width: 90%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #1DB954;
+            color: black;
+            font-size: 16px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #181818;
+        }
+
+        img {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+        }
+
+        .pagination {
+            margin: 20px;
+        }
+
+        .pagination button {
+            background-color: #1DB954;
+            border: none;
+            color: white;
+            padding: 8px 14px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .pagination button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+
+        a {
+            color: #1DB954;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>🎵 Spotify Search History</h2>
+    <table id="historyTable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Album Cover</th>
+                <th>Song Name</th>
+                <th>Artist</th>
+                <th>Album</th>
+                <th>Popularity</th>
+                <th>Duration (mins)</th>
+                <th>Search Time</th>
+            </tr>
+        </thead>
+        <tbody id="historyBody"></tbody>
+    </table>
+
+    <div class="pagination">
+        <button id="prevBtn">Previous</button>
+        <span id="pageInfo"></span>
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <a href="/">← Back to Tracks</a>
+
+    <script>
+        let currentPage = 1;
+        const perPage = 10;
+
+        async function loadHistory(page = 1) {
+            const res = await fetch(`/search_history?page=${page}&per_page=${perPage}`);
+            const data = await res.json();
+
+            const tbody = document.getElementById("historyBody");
+            tbody.innerHTML = "";
+
+            if (data.history.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8">No search history found.</td></tr>`;
+                document.getElementById("pageInfo").textContent = "";
+                return;
+            }
+
+            data.history.forEach(item => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+          <td>${item.sno}</td>
+          <td><img src="${item.album_cover}" alt="cover"></td>
+          <td>${item.song_name}</td>
+          <td>${item.artist}</td>
+          <td>${item.album}</td>
+          <td>${item.popularity}</td>
+          <td>${item.duration}</td>
+          <td>${item.search_time}</td>
+        `;
+                tbody.appendChild(tr);
+            });
+
+            document.getElementById("pageInfo").textContent = `Page ${data.current_page} of ${data.total_pages}`;
+            document.getElementById("prevBtn").disabled = data.current_page <= 1;
+            document.getElementById("nextBtn").disabled = data.current_page >= data.total_pages;
+        }
+
+        document.getElementById("prevBtn").addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+                loadHistory(currentPage);
+            }
+        });
+
+        document.getElementById("nextBtn").addEventListener("click", () => {
+            currentPage++;
+            loadHistory(currentPage);
+        });
+
+        loadHistory();
+    </script>
+</body>
+
+</html>
